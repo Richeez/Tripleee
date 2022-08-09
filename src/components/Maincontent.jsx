@@ -9,6 +9,8 @@ const Maincontent = () => {
             <div className="main-heading">
                 
               <div className="main-items">
+                <div className="main-item-sizer">
+                  
                 <div className="main-item-cont">
                   <div className="main-item-left">
                     <img src="/images/nft-token.jpg" alt="" />
@@ -31,6 +33,7 @@ const Maincontent = () => {
   </div>
 </div>
                 </div>
+                </div>
                 
                   <div className="main-item-right span-2">
                     <div className="text-wrapper">
@@ -52,10 +55,14 @@ const Maincontent = () => {
                           <div className="img-wrapper">
                             <img src="/images/profile-5.jpg" alt="" />
                           </div>
+
                         </div>
         <div className="connect-wallet btn btn-2">
-<li>purchase now</li>
+        <li>purchase now</li>
         </div>
+                        {/* <div className="btn-cont">
+        </div> */}
+
 
                       </div>
                       <div className="right-item ">
