@@ -19,7 +19,7 @@ const Footer = () => {
 
 <FontAwesomeIcon className='icon footer-icon' icon={['fab','spotify']}/>
       </div>
-      <div className="text-box">&copy; copywrites Tripleee | All rights reserve</div>
+      <div className="text-box">&copy; 2022 Tripleee | All rights reserved</div>
     </div>
   
 

@@ -5,9 +5,9 @@ const Maincontent = () => {
   return (
     <main className='main-cont'>
         <section className='section sec1 '>
+          <div className="clip-path"></div>
             <div className="main-heading">
                 
-            </div>
               <div className="main-items">
                 <div className="main-item-cont">
                   <div className="main-item-left">
@@ -63,7 +63,7 @@ const Maincontent = () => {
                           <p className='view-count bold'>15k+</p>
                           <p>There is no time to have a second thought on this! Make aye while the sun shine.</p>
                         </div>
-        <div className="connect-wallet btn btn-2 blur-bg">
+        <div className="connect-wallet btn blur-bg">
 <li>place a bid</li>
         </div>
 
@@ -87,6 +87,7 @@ const Maincontent = () => {
                   </div>
 
               </div>
+            </div>
         </section>
 
         <section className="section sec2">
