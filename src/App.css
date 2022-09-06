@@ -49,6 +49,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  transition: transform 0.5s ease-in-out;
 }
 .header .nav-bar .bugger::before {
   content: "";
@@ -57,6 +58,7 @@
   height: 0.2rem;
   position: absolute;
   background-color: var(--white-color-01);
+  transform: rotate(0deg);
 }
 .header .nav-bar .bugger::after {
   content: "";
@@ -64,16 +66,73 @@
   height: 0.2rem;
   top: 300%;
   position: absolute;
+  transition: transform 0.5s ease-in-out;
+  transform: rotate(0deg);
   background-color: var(--white-color-01);
 }
 .header .nav-bar .bugger div {
   width: 2rem;
   height: 0.2rem;
   background-color: var(--white-color-01);
+  transition: transform 0.5s ease-in-out;
+}
+.header .nav-bar-close {
+  width: 50px;
+  height: 50px;
+  border-radius: 0.5rem;
+  background-color: var(--btn-color);
+  color: var(--white-color-01);
+  cursor: pointer;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  right: 5%;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: transform 0.5s ease-in-out;
+}
+.header .nav-bar-close .bugger {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: transform 0.5s ease-in-out;
+}
+.header .nav-bar-close .bugger::before {
+  content: "";
+  top: 15%;
+  width: 2rem;
+  height: 0.2rem;
+  position: absolute;
+  transform: rotate(45deg);
+  transition: transform 0.5s ease-in-out;
+  background-color: var(--white-color-01);
+}
+.header .nav-bar-close .bugger::after {
+  content: "";
+  width: 2rem;
+  height: 0.2rem;
+  top: 300%;
+  position: absolute;
+  transition: transform 0.5s ease-in-out;
+  transform: rotate(125deg);
+  background-color: var(--white-color-01);
+}
+.header .nav-bar-close .bugger .center {
+  width: 2rem;
+  height: 0.2rem;
+  background-color: var(--white-color-01);
+  display: none;
+  transition: transform 0.5s ease-in;
 }
 .header .nav-body {
   width: 100%;
   display: flex;
+  transition: transform 0.5s ease-in;
 }
 
 .nav {
@@ -120,6 +179,14 @@
   transform: translateX(-50%);
 }
 
+.text-deco {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  width: 100%;
+  display: block;
+}
+
 .btn-cont {
   margin-right: auto;
   width: 400px;
@@ -129,6 +196,10 @@
   gap: 1.5rem;
   text-transform: capitalize;
   font-weight: 600;
+}
+
+.red {
+  min-height: 100vh;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -412,14 +483,233 @@
   line-height: 1.6;
 }
 
+.communities {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  padding: 2rem;
+}
+.communities .cummunity {
+  width: 350px;
+  max-width: 100%;
+  position: relative;
+  height: 300px;
+  overflow: hidden;
+  border-radius: 2rem;
+  box-shadow: 1px 1px 5px var(--grey-2), 1px 1px 0 0 var(--grey-2);
+}
+.communities .cummunity .img-cont {
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  border-radius: 2rem;
+}
+.communities .cummunity .img-cont img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.communities .cummunity .overlay {
+  transform: translateY(100%);
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: absolute;
+  background: linear-gradient(to right, var(--secondary-color-2), var(--secondary-color) 80%);
+  transition: all 0.5s ease-in-out;
+}
+.communities .cummunity .overlay h2 {
+  margin-bottom: 2rem;
+  text-transform: capitalize;
+  color: var(--btn-color);
+}
+.communities .cummunity .overlay .btn {
+  width: 12rem;
+  font-size: 1.2rem;
+}
+.communities .cummunity:hover .overlay {
+  top: 0;
+  bottom: 0;
+  transform: translateY(0%);
+}
+
+.sec3 {
+  min-height: 100vh;
+  background: linear-gradient(to right top, var(--secondary-color-3), var(--secondary-color-4) 80%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.glass {
+  width: 100%;
+  min-height: 80vh;
+  border-radius: 2rem;
+  background-color: var(--white-color-02);
+  z-index: 2;
+  position: relative;
+  box-shadow: 1px 1px 5px var(--grey-2), 1px 1px 0 0 var(--grey-2);
+  -webkit-backdrop-filter: blur(0.2rem);
+          backdrop-filter: blur(0.2rem);
+}
+
+.circle {
+  background-color: var(--white-color-01);
+  width: 15rem;
+  height: 15rem;
+  position: absolute;
+  border-radius: 50%;
+  background: linear-gradient(to right bottom, var(--white-color-01), var(--white-color-02));
+}
+
+.circle1 {
+  top: 5%;
+  right: 5%;
+}
+
+.circle2 {
+  bottom: 0;
+  left: 0;
+}
+
+.cryptoViewer-cont {
+  width: 100%;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 10%;
+  border-radius: 2rem;
+  background-color: var(--secondary-color-4);
+  background: linear-gradient(to top right, var(--secondary-color-4), var(--white-color-2));
+  -webkit-backdrop-filter: blur(0.2rem);
+          backdrop-filter: blur(0.2rem);
+  padding: 1rem;
+}
+.cryptoViewer-cont .name {
+  text-align: center;
+  width: 100%;
+  font-size: 4rem;
+  text-transform: capitalize;
+}
+.cryptoViewer-cont .crypto-preview {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-bottom-left-radius: 2rem;
+  justify-content: center;
+  border-bottom-right-radius: 2rem;
+  padding: 0.5rem 2rem;
+  background-color: var(--secondary-color-2);
+  box-shadow: 1px 1px 5px var(--grey-2), 1px 1px 0 0 var(--grey-2);
+  background: linear-gradient(to right bottom, var(--white-color-1), var(--white-color-2));
+}
+.cryptoViewer-cont .img-cont {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.5rem;
+  position: relative;
+}
+.cryptoViewer-cont .img-cont .reload-cont {
+  position: absolute;
+  top: 0;
+  right: -200%;
+  transform: rotate(10deg);
+  font-size: 2rem;
+  cursor: pointer;
+}
+.cryptoViewer-cont .img-cont .reload-cont .reload {
+  pointer-events: none;
+}
+.cryptoViewer-cont .img-cont .crypto-img {
+  width: 180px;
+  height: 180px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+.cryptoViewer-cont .img-cont .crypto-img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.cryptoViewer-cont .value {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.cryptoViewer-cont .value .price {
+  font-size: 3.5rem;
+  font-weight: bolder;
+  text-transform: uppercase;
+  width: 100%;
+}
+.cryptoViewer-cont .type-cont {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+.cryptoViewer-cont .type-cont .type {
+  font-size: 1.5rem;
+  font-weight: bolder;
+}
+
+.random-cont {
+  padding: 4rem 1rem;
+}
+.random-cont .tokens {
+  display: grid;
+  grid-template-columns: repeat(6, 150px);
+  gap: 2rem;
+  width: 100%;
+  place-content: center;
+}
+.random-cont .tokens .token {
+  width: 150px;
+  box-shadow: 1px 1px 5px var(--grey-2), 1px 1px 0 0 var(--grey-2);
+  cursor: pointer;
+  border-radius: 1rem;
+  overflow: hidden;
+  background-color: var(--white-color-1);
+}
+.random-cont .tokens .token .img-cont .crypto-img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.random-cont .tokens .token .img-cont .crypto-unit {
+  width: 100%;
+}
+.random-cont .tokens .token .img-cont .crypto-unit p {
+  text-align: center;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+}
+
+.spinner-cont {
+  grid-column: span 6;
+  align-items: center;
+  justify-content: center;
+}
+.spinner-cont .spinner {
+  font-size: 10rem;
+  width: 100%;
+  text-align: center;
+  -webkit-animation: cursor-blink 0.5ms steps(4) infinite;
+          animation: cursor-blink 0.5ms steps(4) infinite;
+}
+
 .btn {
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
-  padding: 0.7rem 1.2rem;
+  padding: 0.7rem 1.5rem;
   text-align: center;
   border: none;
-  border-radius: 1.3rem;
+  border-radius: 1.5rem;
   background-color: var(--btn-color);
   color: var(--white-color-01);
   cursor: pointer;
@@ -429,14 +719,60 @@
 .btn:hover {
   background-color: var(--white-color-02);
   color: var(--btn-color);
-  -webkit-backdrop-filter: blur(5px);
-          backdrop-filter: blur(5px);
   transition: all 0.5s ease-in-out;
   border: 1px solid var(--btn-color);
 }
 
+.btn-2 {
+  background-color: var(--btn-color-2);
+  width: 180px;
+  padding: 0.8rem 1.5rem;
+  text-align: center;
+  font-weight: 600;
+  border: 1px solid var(--btn-color-2);
+  color: var(--white-color-01);
+  border-radius: 1.5rem;
+  text-transform: capitalize;
+  cursor: pointer;
+  list-style: none;
+}
+.btn-2:hover {
+  background-color: var(--white-color-02);
+  color: var(--btn-color-2);
+  border: 1px solid var(--btn-color-2);
+  transition: all 0.5s ease-in-out;
+}
+
+.blur-bg {
+  background-color: var(--white-color-02);
+  color: var(--btn-color);
+  border: 1px solid var(--btn-color);
+  font-weight: 600;
+  padding: 0.8rem 1.5rem;
+  border-radius: 1.5rem;
+  width: 180px;
+  text-transform: capitalize;
+  cursor: pointer;
+  list-style: none;
+}
+.blur-bg:hover {
+  background-color: var(--btn-color);
+  color: var(--white-color-01);
+  transition: all 0.5s ease-in-out;
+}
+
+.connect-wallet {
+  width: 180px;
+  padding: 0.7rem 1rem;
+  text-align: center;
+}
+
 .span-2 {
   grid-column: span 2;
+}
+
+.span-whole {
+  grid-column: span 3;
 }
 
 .small-text {
@@ -460,38 +796,8 @@
   word-break: normal;
 }
 
-.btn-2 {
-  background-color: var(--btn-color-2);
-  width: 180px;
-  padding: 0.8rem 1rem;
-  text-align: center;
-  font-weight: 600;
-  border: 1px solid var(--btn-color-2);
-}
-.btn-2:hover {
-  background-color: var(--white-color-02);
-  color: var(--btn-color-2);
-  -webkit-backdrop-filter: blur(5px);
-          backdrop-filter: blur(5px);
-}
-
-.blur-bg {
-  background-color: var(--white-color-02);
-  color: var(--btn-color);
-  -webkit-backdrop-filter: blur(5px);
-          backdrop-filter: blur(5px);
-  border: 1px solid var(--btn-color);
-  font-weight: 600;
-}
-.blur-bg:hover {
-  background-color: var(--btn-color);
-  color: var(--white-color-01);
-}
-
-.connect-wallet {
-  width: 180px;
-  padding: 0.8rem 1rem;
-  text-align: center;
+.grey {
+  color: var(--grey-2);
 }
 
 .footer {
@@ -535,6 +841,19 @@
   transition: all 0.5s ease-in-out;
 }
 
+@-webkit-keyframes cursor-blink {
+  0% {
+    color: var(--grey-2);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes cursor-blink {
+  0% {
+    color: var(--grey-2);
+    transform: rotate(360deg);
+  }
+}
 @media screen and (max-width: 64rem) {
   .header h1 {
     font-size: 1.3rem;
@@ -551,8 +870,8 @@
     top: 100%;
     right: 0;
     padding-top: 3rem;
+    transform: translateX(100%) scaleX(0);
     background-color: var(--secondary-color-2);
-    transform: translate(100%) scale(0);
   }
   .nav-body .nav {
     width: 100%;
@@ -561,14 +880,19 @@
     flex-direction: column;
     width: 100%;
     justify-content: center;
-    font-size: 1.2rem;
+    font-size: 2rem;
+    gap: 1rem;
+    text-shadow: 1px 2px 3px var(--white-color-01);
   }
   .nav-body .btn-cont {
     padding-top: 2rem;
     width: 100%;
     flex-direction: column;
-    font-size: 1.2rem;
+    font-size: 1.1rem !important;
     justify-content: center;
+  }
+  .reset {
+    transform: translateX(0) scaleX(1);
   }
   .header h1 {
     font-size: 1.3rem;
@@ -814,6 +1138,189 @@
             backdrop-filter: blur(5px);
     border: 1px solid var(--btn-color-2);
   }
+  .communities {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    padding: 1rem;
+    place-content: center;
+  }
+  .communities .cummunity {
+    width: 100%;
+    width: 300px;
+    position: relative;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 2rem;
+    box-shadow: 1px 1px 5px var(--grey-2), 1px 1px 0 0 var(--grey-2);
+  }
+  .communities .cummunity .img-cont {
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    border-radius: 2rem;
+  }
+  .communities .cummunity .img-cont img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .communities .cummunity .overlay {
+    transform: translateY(100%);
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: absolute;
+    background: linear-gradient(to right, var(--secondary-color-2), var(--secondary-color) 80%);
+    transition: all 0.5s ease-in-out;
+  }
+  .communities .cummunity .overlay h2 {
+    margin-bottom: 2rem;
+    text-transform: capitalize;
+    color: var(--btn-color);
+  }
+  .communities .cummunity .overlay .btn {
+    width: 12rem;
+    font-size: 1.2rem;
+  }
+  .communities .cummunity:hover .overlay {
+    top: 0;
+    bottom: 0;
+    transform: translateY(0%);
+  }
+  .sec3 {
+    min-height: 100vh;
+    background: linear-gradient(to right top, var(--secondary-color-3), var(--secondary-color-4) 80%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .glass {
+    width: 100%;
+    min-height: 80vh;
+    border-radius: 2rem;
+    background-color: var(--white-color-02);
+    z-index: 2;
+    position: relative;
+    box-shadow: 1px 1px 5px var(--grey-2), 1px 1px 0 0 var(--grey-2);
+    -webkit-backdrop-filter: blur(0.2rem);
+            backdrop-filter: blur(0.2rem);
+  }
+  .circle {
+    background-color: var(--white-color-01);
+    width: 15rem;
+    height: 15rem;
+    position: absolute;
+    border-radius: 50%;
+    background: linear-gradient(to right bottom, var(--white-color-01), var(--white-color-02));
+  }
+  .circle1 {
+    top: 5%;
+    right: 5%;
+  }
+  .circle2 {
+    bottom: 0;
+    left: 0;
+  }
+  .cryptoViewer-cont {
+    width: 100%;
+    padding: 1rem;
+  }
+  .cryptoViewer-cont .name {
+    text-align: center;
+    width: 100%;
+    font-size: 4rem;
+  }
+  .cryptoViewer-cont .crypto-preview {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-bottom-left-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+    background-color: var(--white-color-01);
+    box-shadow: 1px 1px 5px var(--grey-2), 1px 1px 0 0 var(--grey-2);
+    background: linear-gradient(to right bottom, var(--white-color-1), var(--white-color-2));
+  }
+  .cryptoViewer-cont .img-cont {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0.5rem;
+    position: relative;
+  }
+  .cryptoViewer-cont .img-cont .reload-cont {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: rotate(10deg);
+    font-size: 2rem;
+    cursor: pointer;
+  }
+  .cryptoViewer-cont .img-cont .reload-cont .reload {
+    pointer-events: none;
+  }
+  .cryptoViewer-cont .img-cont .crypto-img {
+    width: 180px;
+    height: 180px;
+    overflow: hidden;
+    border-radius: 50%;
+  }
+  .cryptoViewer-cont .img-cont .crypto-img img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .cryptoViewer-cont .value {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  .cryptoViewer-cont .value .price {
+    font-size: 3.5rem;
+  }
+  .cryptoViewer-cont .type-cont {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+  }
+  .cryptoViewer-cont .type-cont .type {
+    font-size: 1rem;
+  }
+  .random-cont {
+    padding: 4rem 1rem;
+  }
+  .random-cont .tokens {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 1rem;
+    justify-content: center;
+  }
+  .random-cont .tokens .token {
+    width: 150px;
+    box-shadow: 1px 1px 5px var(--grey-2), 1px 1px 0 0 var(--grey-2);
+    cursor: pointer;
+    border-radius: 1rem;
+    overflow: hidden;
+    background-color: var(--white-color-1);
+  }
+  .random-cont .tokens .token .img-cont .crypto-img img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: contain;
+       object-fit: contain;
+  }
+  .random-cont .tokens .token .img-cont .crypto-unit {
+    width: 100%;
+  }
+  .random-cont .tokens .token .img-cont .crypto-unit p {
+    text-align: center;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+  }
 }
 @media screen and (max-width: 57rem) {
   .header h1 {
@@ -832,7 +1339,7 @@
     right: 0;
     padding-top: 3rem;
     background-color: var(--secondary-color-2);
-    transform: translate(100%) scale(0);
+    transform: translateX(100%) scaleX(0);
   }
   .header .nav-body .nav {
     width: 100%;
@@ -841,7 +1348,7 @@
     flex-direction: column;
     width: 100%;
     justify-content: center;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
   }
   .header .nav-body .btn-cont {
     padding-top: 2rem;
@@ -849,6 +1356,9 @@
     flex-direction: column;
     font-size: 1.2rem;
     justify-content: center;
+  }
+  .header .reset {
+    transform: translateX(0) scaleX(1);
   }
   .about-page {
     display: grid;
@@ -899,6 +1409,139 @@
   .about-page .left-side .items .item p {
     line-height: 1.6;
   }
+  .sec3 {
+    min-height: 100vh;
+    background: linear-gradient(to right top, var(--secondary-color-3), var(--secondary-color-4) 80%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .glass {
+    width: 100%;
+    min-height: 80vh;
+    border-radius: 2rem;
+    background-color: var(--white-color-02);
+    z-index: 2;
+    position: relative;
+    box-shadow: 1px 1px 5px var(--grey-2), 1px 1px 0 0 var(--grey-2);
+    -webkit-backdrop-filter: blur(0.2rem);
+            backdrop-filter: blur(0.2rem);
+  }
+  .circle {
+    background-color: var(--white-color-01);
+    width: 15rem;
+    height: 15rem;
+    position: absolute;
+    border-radius: 50%;
+    background: linear-gradient(to right bottom, var(--white-color-01), var(--white-color-02));
+  }
+  .circle1 {
+    top: 5%;
+    right: 5%;
+  }
+  .circle2 {
+    bottom: 0;
+    left: 0;
+  }
+  .cryptoViewer-cont {
+    width: 100%;
+    padding: 1rem;
+  }
+  .cryptoViewer-cont .name {
+    text-align: center;
+    width: 100%;
+    font-size: 4rem;
+  }
+  .cryptoViewer-cont .crypto-preview {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-bottom-left-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+    background-color: var(--white-color-01);
+    box-shadow: 1px 1px 5px var(--grey-2), 1px 1px 0 0 var(--grey-2);
+    background: linear-gradient(to right bottom, var(--white-color-1), var(--white-color-2));
+  }
+  .cryptoViewer-cont .img-cont {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0.5rem;
+  }
+  .cryptoViewer-cont .img-cont .reload-cont {
+    position: absolute;
+    top: 0;
+    right: -200%;
+    transform: rotate(10deg);
+    font-size: 2rem;
+    cursor: pointer;
+  }
+  .cryptoViewer-cont .img-cont .reload-cont .reload {
+    pointer-events: none;
+  }
+  .cryptoViewer-cont .img-cont .crypto-img {
+    width: 180px;
+    height: 180px;
+    overflow: hidden;
+    border-radius: 50%;
+  }
+  .cryptoViewer-cont .img-cont .crypto-img img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .cryptoViewer-cont .value {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  .cryptoViewer-cont .value .price {
+    font-size: 3.5rem;
+    text-align: end;
+    padding-right: 3rem;
+  }
+  .cryptoViewer-cont .type-cont {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+  }
+  .cryptoViewer-cont .type-cont .type {
+    font-size: 1.5rem;
+  }
+  .random-cont {
+    padding: 4rem 1rem;
+  }
+  .random-cont .tokens {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr) !important;
+    -moz-column-gap: 1rem;
+         column-gap: 1rem;
+    row-gap: 2rem;
+    width: 100%;
+    justify-content: center;
+  }
+  .random-cont .tokens .token {
+    width: 150px;
+    box-shadow: 1px 1px 5px var(--grey-2), 1px 1px 0 0 var(--grey-2);
+    cursor: pointer;
+    border-radius: 1rem;
+    overflow: hidden;
+    background-color: var(--white-color-1);
+  }
+  .random-cont .tokens .token .img-cont .crypto-img img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: contain;
+       object-fit: contain;
+  }
+  .random-cont .tokens .token .img-cont .crypto-unit {
+    width: 100%;
+  }
+  .random-cont .tokens .token .img-cont .crypto-unit p {
+    text-align: center;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+  }
 }
 @media screen and (max-width: 40rem) {
   .span-2 {
@@ -913,7 +1556,7 @@
     right: 0;
     padding-top: 3rem;
     background-color: var(--secondary-color-2);
-    transform: translate(100%) scale(0);
+    transform: translateX(100%) scaleX(0);
   }
   .nav-body .nav {
     width: 100%;
@@ -930,6 +1573,9 @@
     flex-direction: column;
     font-size: 1.2rem;
     justify-content: center;
+  }
+  .reset {
+    transform: translateX(0) scaleX(1);
   }
   .header h1 {
     font-size: 1.3rem;
@@ -1027,7 +1673,7 @@
     position: relative;
   }
   .main-items .main-item-right .text-wrapper h2 {
-    font-size: 3rem;
+    font-size: 2.5rem;
     margin-bottom: 1.5rem;
     white-space: wrap;
     width: 100%;
@@ -1172,11 +1818,198 @@
   .about-page .left-side .items .item p {
     line-height: 1.6;
   }
+  .communities {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 1rem;
+    justify-items: center;
+  }
+  .communities .cummunity {
+    max-width: 100%;
+    position: relative;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 2rem;
+    box-shadow: 1px 1px 5px var(--grey-2), 1px 1px 0 0 var(--grey-2);
+  }
+  .communities .cummunity .img-cont {
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    border-radius: 2rem;
+  }
+  .communities .cummunity .img-cont img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .communities .cummunity .overlay {
+    transform: translateY(100%);
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: absolute;
+    background: linear-gradient(to right, var(--secondary-color-2), var(--secondary-color) 80%);
+    transition: all 0.5s ease-in-out;
+  }
+  .communities .cummunity .overlay h2 {
+    margin-bottom: 2rem;
+    text-transform: capitalize;
+    color: var(--btn-color);
+  }
+  .communities .cummunity .overlay .btn {
+    width: 12rem;
+    font-size: 1.2rem;
+  }
+  .communities .cummunity:hover .overlay {
+    top: 0;
+    bottom: 0;
+    transform: translateY(0%);
+  }
+  .sec3 {
+    min-height: 100vh;
+    background: linear-gradient(to right top, var(--secondary-color-3), var(--secondary-color-4) 80%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .glass {
+    width: 100%;
+    min-height: 80vh;
+    border-radius: 2rem;
+    background-color: var(--white-color-02);
+    z-index: 2;
+    position: relative;
+    box-shadow: 1px 1px 5px var(--grey-2), 1px 1px 0 0 var(--grey-2);
+    -webkit-backdrop-filter: blur(0.2rem);
+            backdrop-filter: blur(0.2rem);
+  }
+  .circle {
+    background-color: var(--white-color-01);
+    width: 15rem;
+    height: 15rem;
+    position: absolute;
+    border-radius: 50%;
+    background: linear-gradient(to right bottom, var(--white-color-01), var(--white-color-02));
+  }
+  .circle1 {
+    top: 5%;
+    right: 5%;
+  }
+  .circle2 {
+    bottom: 0;
+    left: 0;
+  }
+  .cryptoViewer-cont {
+    width: 100%;
+    padding: 1rem;
+  }
+  .cryptoViewer-cont .name {
+    text-align: center;
+    width: 100%;
+    font-size: 3rem;
+  }
+  .cryptoViewer-cont .crypto-preview {
+    display: flex;
+    flex-direction: column;
+    border-bottom-left-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+    background-color: var(--white-color-01);
+    box-shadow: 1px 1px 5px var(--grey-2), 1px 1px 0 0 var(--grey-2);
+    background: linear-gradient(to right bottom, var(--white-color-1), var(--white-color-2));
+  }
+  .cryptoViewer-cont .img-cont {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0.5rem;
+    position: relative;
+  }
+  .cryptoViewer-cont .img-cont .reload-cont {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: rotate(10deg);
+    font-size: 2rem;
+    cursor: pointer;
+  }
+  .cryptoViewer-cont .img-cont .reload-cont .reload {
+    pointer-events: none;
+  }
+  .cryptoViewer-cont .img-cont .crypto-img {
+    width: 130px;
+    height: 130px;
+    overflow: hidden;
+    border-radius: 50%;
+  }
+  .cryptoViewer-cont .img-cont .crypto-img img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .cryptoViewer-cont .value {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  .cryptoViewer-cont .value .price {
+    font-size: 2rem;
+    text-align: end;
+    padding-right: 0;
+    width: 100%;
+  }
+  .cryptoViewer-cont .type-cont {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+  }
+  .cryptoViewer-cont .type-cont .type {
+    font-size: 1rem;
+    width: 100%;
+  }
+  .random-cont {
+    padding: 4rem 1rem;
+  }
+  .random-cont .tokens {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1rem;
+    width: 100%;
+    justify-items: center;
+  }
+  .random-cont .tokens .token {
+    width: 120px;
+    box-shadow: 1px 1px 5px var(--grey-2), 1px 1px 0 0 var(--grey-2);
+    cursor: pointer;
+    border-radius: 1rem;
+    overflow: hidden;
+    background-color: var(--white-color-1);
+  }
+  .random-cont .tokens .token .img-cont .crypto-img img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: contain;
+       object-fit: contain;
+  }
+  .random-cont .tokens .token .img-cont .crypto-unit {
+    width: 100%;
+  }
+  .random-cont .tokens .token .img-cont .crypto-unit p {
+    text-align: center;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+  }
   .btn-2 {
     background-color: var(--btn-color-2);
-    width: 150px;
+    width: 180px;
     max-width: 100%;
-    padding: 0.8rem 1rem;
+    padding: 0.8rem 1.5rem;
     text-align: center;
     font-weight: 600;
   }
@@ -1226,5 +2059,17 @@
     color: var(--btn-color);
     transform: translateY(-7px);
     transition: all 0.5s ease-in-out;
+  }
+  .spinner-cont {
+    grid-column: span 6;
+    align-items: center;
+    justify-content: center;
+  }
+  .spinner-cont .spinner {
+    font-size: 5rem;
+    width: 100%;
+    text-align: center;
+    -webkit-animation: cursor-blink 0.5ms steps(4) infinite;
+            animation: cursor-blink 0.5ms steps(4) infinite;
   }
 }/*# sourceMappingURL=App.css.map */

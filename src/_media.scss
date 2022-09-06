@@ -22,30 +22,42 @@
         top: 100%;
         right: 0;
         padding-top: 3rem;
+        transform: translateX(100%) scaleX(0);
+        // transition: transform 0.5s ease-in-out;
         background-color: var(--secondary-color-2);
-        // backdrop-filter: blur(5px);
-
-        transform: translate(100%) scale(0);
+        // background-color: orangered !important;
 
         .nav{ 
             width: 100%;
+            // background-color: orange;
 
             .linkCont{
                 flex-direction: column;
                 width: 100%;
                 justify-content: center;
-                font-size: 1.2rem;
+                font-size: 2rem;
+                gap: 1rem;
+                text-shadow: 1px 2px 3px var(--white-color-01);
             }
         }
 
         .btn-cont{
             padding-top: 2rem;
             width: 100%;
+            // background-color: aqua;
             flex-direction: column;
-            font-size: 1.2rem;
+            font-size: 1.1rem !important;
             justify-content: center;
         }
+            
     }
+    .reset{
+        transform: translateX(0) scaleX(1);
+    // transition: transform 1s ease-in-out;
+ // animation: scaleAnim 1s forwards ease-in-out;
+
+    }
+
 
     .header{
         h1{
@@ -358,7 +370,270 @@
     }
 }
 
-   
+ //todo============================COMMUNITY==================================*/
+
+.communities{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    padding: 1rem;
+    place-content: center;
+
+    .cummunity{
+        width: 100%;
+        width: 300px;
+        position: relative;
+        height: 300px;
+        overflow: hidden;
+        border-radius: 2rem;
+        box-shadow: 1px 1px 5px var(--grey-2), 1px 1px 0 0 var(--grey-2) ;
+
+
+
+        .img-cont{
+            overflow: hidden;
+            width: 100%;
+            height: 100%;
+            border-radius: 2rem;
+
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        .overlay{
+            transform: translateY(100%);
+            left: 0;
+            right: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            // gap: 2rem;
+            position: absolute;
+            background: linear-gradient( to right, var(--secondary-color-2), var(--secondary-color)80%);
+            transition: all .5s ease-in-out;
+
+            h2{
+                margin-bottom: 2rem;
+                text-transform: capitalize;
+                color: var(--btn-color);
+            }
+
+            .btn{
+                width: 12rem;
+                font-size: 1.2rem;
+
+            }
+        }
+        &:hover .overlay{
+            top: 0;
+            bottom: 0;
+
+            transform: translateY(0%);
+
+        }
+
+    }
+}
+  
+//todo============================CRYPTO PAGE===============================*/
+
+.sec3{
+    min-height: 100vh;
+    background: linear-gradient( to right top, var(--secondary-color-3), var(--secondary-color-4)80%);
+display: flex;
+align-items: center;
+justify-content: center;
+  }
+
+  .glass{
+    width: 100%;
+    min-height: 80vh;
+    border-radius: 2rem;
+    background-color: var(--white-color-02);
+z-index: 2;
+position:relative;
+    box-shadow: 1px 1px 5px var(--grey-2), 1px 1px 0 0 var(--grey-2) ;
+    backdrop-filter: blur(.2rem);
+
+
+  }
+
+  .circle{
+      background-color: var(--white-color-01);
+    width: 15rem;
+    height: 15rem;
+    position: absolute;
+    border-radius: 50%;
+    background: linear-gradient( to right bottom, var(--white-color-01), var(--white-color-02));
+
+  }
+
+  .circle1{
+    top: 5%;
+    right: 5%;
+  }
+
+  .circle2{
+    bottom: 0;
+    left: 0;
+  }
+  
+
+.cryptoViewer-cont{
+    width: 100%;
+    // background-color: orange;
+    padding: 1rem;
+
+
+    
+
+    .name{
+        text-align: center;
+        width:100%;
+        font-size: 4rem;
+    }
+
+    .crypto-preview{
+        display:grid;
+        grid-template-columns: repeat(3, 1fr) ;
+        border-bottom-left-radius: 2rem;
+        border-bottom-right-radius: 2rem;
+        background-color: var(--white-color-01);
+
+        // padding: 2rem;
+        box-shadow: 1px 1px 5px var(--grey-2), 1px 1px 0 0 var(--grey-2) ;
+        background: linear-gradient( to right bottom, var(--white-color-1), var(--white-color-2));
+
+
+
+
+
+    }
+
+    .img-cont{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: .5rem;
+        position: relative;
+        // background-color: blueviolet;
+
+        .reload-cont{
+            position: absolute;
+            top: 0;
+            right: 0;
+            transform: rotate(10deg);
+            font-size: 2rem;
+            cursor:pointer;
+        
+            .reload{
+                pointer-events:none;
+            }
+        
+        }
+
+        .crypto-img{
+            width: 180px;
+            height: 180px;
+            overflow: hidden;
+            border-radius: 50%;
+    
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+    }
+
+
+    //todo VALUE
+
+    .value{
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        // background-color: blue;
+        .price{
+            font-size: 3.5rem;
+            
+
+
+        }
+    }
+
+    .type-cont{
+        display:flex;
+        align-items: flex-start;
+        justify-content: center;
+        // width: 100%;
+        // background-color: aqua;
+
+        .type{
+            font-size: 1rem;
+            // padding-bottom: 1rem;
+
+        }
+
+    }
+    
+
+}
+
+.random-cont{
+    padding: 4rem 1rem;
+
+    .tokens{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 1rem;
+        // width: 100%;
+justify-content: center;
+
+        .token{
+            width: 150px;
+            box-shadow: 1px 1px 5px var(--grey-2), 1px 1px 0 0 var(--grey-2) ;
+            cursor: pointer;
+            // padding-bottom: 2rem;
+            border-radius: 1rem;
+            overflow: hidden;
+            background-color: var(--white-color-1);
+           
+            .img-cont{
+                // width: 100px;
+                // height: 100px;
+
+                .crypto-img{
+
+                    img{
+                        width: 100%;
+                        height: 100%;
+                        object-fit: contain;
+                    }
+
+                }
+.crypto-unit{
+    width: 100%;
+
+    p{
+        text-align: center;
+        font-size: 1.5rem;
+        text-transform: uppercase;
+    }
+    
+}
+
+            }
+        }
+    }
+}
+
+
 
 
 }
@@ -386,11 +661,11 @@
             position:absolute;
             top: 100%;
             right: 0;
+            // transition: transform 0.5s ease-in-out;
             padding-top: 3rem;
             background-color: var(--secondary-color-2);
             // backdrop-filter: blur(5px);
-    
-            transform: translate(100%) scale(0);
+            transform: translateX(100%) scaleX(0);
     
             .nav{ 
                 width: 100%;
@@ -399,7 +674,7 @@
                     flex-direction: column;
                     width: 100%;
                     justify-content: center;
-                    font-size: 1.2rem;
+                    font-size: 1.5rem;
                 }
             }
     
@@ -411,6 +686,13 @@
                 justify-content: center;
             }
         }
+        .reset{
+            transform: translateX(0) scaleX(1);
+        // transition: transform 1s ease-in-out;
+     // animation: scaleAnim 1s forwards ease-in-out;
+    
+        }
+    
     }
 
     .about-page{
@@ -480,6 +762,200 @@
     
     }
     
+    //todo============================CRYPTO PAGE===============================*/
+
+.sec3{
+    min-height: 100vh;
+    background: linear-gradient( to right top, var(--secondary-color-3), var(--secondary-color-4)80%);
+display: flex;
+align-items: center;
+justify-content: center;
+  }
+
+  .glass{
+    width: 100%;
+    min-height: 80vh;
+    border-radius: 2rem;
+    background-color: var(--white-color-02);
+z-index: 2;
+position:relative;
+    box-shadow: 1px 1px 5px var(--grey-2), 1px 1px 0 0 var(--grey-2) ;
+    backdrop-filter: blur(.2rem);
+
+
+  }
+
+  .circle{
+      background-color: var(--white-color-01);
+    width: 15rem;
+    height: 15rem;
+    position: absolute;
+    border-radius: 50%;
+    background: linear-gradient( to right bottom, var(--white-color-01), var(--white-color-02));
+
+  }
+
+  .circle1{
+    top: 5%;
+    right: 5%;
+  }
+
+  .circle2{
+    bottom: 0;
+    left: 0;
+  }
+  
+
+.cryptoViewer-cont{
+    width: 100%;
+
+    // background-color: orange;
+    padding: 1rem;
+
+    .name{
+        text-align: center;
+        width:100%;
+        font-size: 4rem;
+    }
+
+    .crypto-preview{
+        display:grid;
+        grid-template-columns: repeat(3, 1fr) ;
+        border-bottom-left-radius: 2rem;
+        border-bottom-right-radius: 2rem;
+        background-color: var(--white-color-01);
+
+        // padding: 2rem;
+        box-shadow: 1px 1px 5px var(--grey-2), 1px 1px 0 0 var(--grey-2) ;
+        background: linear-gradient( to right bottom, var(--white-color-1), var(--white-color-2));
+
+
+
+
+
+    }
+
+    .img-cont{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: .5rem;
+        // background-color: blueviolet;
+        .reload-cont{
+            position: absolute;
+            top: 0;
+            right: -200%;
+            transform: rotate(10deg);
+            font-size: 2rem;
+            cursor:pointer;
+        
+            .reload{
+                pointer-events:none;
+            }
+        
+        }
+
+        .crypto-img{
+            width: 180px;
+            height: 180px;
+            overflow: hidden;
+            border-radius: 50%;
+    
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+    }
+
+
+    //todo VALUE
+
+    .value{
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        .price{
+            font-size: 3.5rem;
+            text-align: end;
+            padding-right: 3rem;
+            
+
+
+        }
+    }
+
+    .type-cont{
+        display:flex;
+        align-items: flex-start;
+        justify-content: center;
+        // width: 100%;
+        // background-color: aqua;
+
+        .type{
+            font-size: 1.5rem;
+            // padding-bottom: 1rem;
+
+        }
+
+    }
+    
+
+}
+
+.random-cont{
+    padding: 4rem 1rem;
+
+    .tokens{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr) !important;
+        column-gap: 1rem;
+        row-gap: 2rem;
+        width: 100%;
+justify-content: center;
+
+        .token{
+            width: 150px;
+            box-shadow: 1px 1px 5px var(--grey-2), 1px 1px 0 0 var(--grey-2) ;
+            cursor: pointer;
+            // padding-bottom: 2rem;
+            border-radius: 1rem;
+            overflow: hidden;
+            background-color: var(--white-color-1);
+           
+            .img-cont{
+                // width: 100px;
+                // height: 100px;
+
+                .crypto-img{
+
+                    img{
+                        width: 100%;
+                        height: 100%;
+                        object-fit: contain;
+                    }
+
+                }
+.crypto-unit{
+    width: 100%;
+
+    p{
+        text-align: center;
+        font-size: 1.5rem;
+        text-transform: uppercase;
+    }
+    
+}
+
+            }
+        }
+    }
+}
+
+
+
 
 
 }
@@ -502,8 +978,8 @@
         padding-top: 3rem;
         background-color: var(--secondary-color-2);
         // backdrop-filter: blur(5px);
-
-        transform: translate(100%) scale(0);
+        // transition: transform 0.5s ease-in-out;
+        transform: translateX(100%) scaleX(0);
 
         .nav{ 
             width: 100%;
@@ -525,6 +1001,13 @@
             justify-content: center;
         }
     }
+    .reset{
+        transform: translateX(0) scaleX(1);
+    // transition: transform 1s ease-in-out;
+ // animation: scaleAnim 1s forwards ease-in-out;
+
+    }
+
 
     .header{
         h1{
@@ -651,7 +1134,7 @@ justify-items: center;
     position: relative;
 
     h2{
-        font-size: 3rem;
+        font-size: 2.5rem;
         margin-bottom: 1.5rem;
         white-space: wrap;
         width: 100%;
@@ -845,11 +1328,276 @@ gap: 3rem;
 
 }
 
+//todo============================COMMUNITY==================================*/
+
+.communities{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 1rem;
+    justify-items: center;
+
+    .cummunity{
+        max-width: 100%;
+        position: relative;
+        height: 300px;
+        overflow: hidden;
+        border-radius: 2rem;
+        box-shadow: 1px 1px 5px var(--grey-2), 1px 1px 0 0 var(--grey-2) ;
+
+
+
+        .img-cont{
+            overflow: hidden;
+            width: 100%;
+            height: 100%;
+            border-radius: 2rem;
+
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        .overlay{
+            transform: translateY(100%);
+            left: 0;
+            right: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            // gap: 2rem;
+            position: absolute;
+            background: linear-gradient( to right, var(--secondary-color-2), var(--secondary-color)80%);
+            transition: all .5s ease-in-out;
+
+            h2{
+                margin-bottom: 2rem;
+                text-transform: capitalize;
+                color: var(--btn-color);
+            }
+
+            .btn{
+                width: 12rem;
+                font-size: 1.2rem;
+
+            }
+        }
+        &:hover .overlay{
+            top: 0;
+            bottom: 0;
+
+            transform: translateY(0%);
+
+        }
+
+    }
+}
+//todo============================CRYPTO PAGE===============================*/
+
+.sec3{
+    min-height: 100vh;
+    background: linear-gradient( to right top, var(--secondary-color-3), var(--secondary-color-4)80%);
+display: flex;
+align-items: center;
+justify-content: center;
+  }
+
+  .glass{
+    width: 100%;
+    min-height: 80vh;
+    border-radius: 2rem;
+    background-color: var(--white-color-02);
+z-index: 2;
+position:relative;
+    box-shadow: 1px 1px 5px var(--grey-2), 1px 1px 0 0 var(--grey-2) ;
+    backdrop-filter: blur(.2rem);
+
+
+  }
+
+  .circle{
+      background-color: var(--white-color-01);
+    width: 15rem;
+    height: 15rem;
+    position: absolute;
+    border-radius: 50%;
+    background: linear-gradient( to right bottom, var(--white-color-01), var(--white-color-02));
+
+  }
+
+  .circle1{
+    top: 5%;
+    right: 5%;
+  }
+
+  .circle2{
+    bottom: 0;
+    left: 0;
+  }
+  
+
+.cryptoViewer-cont{
+    width: 100%;
+    // position: sticky;
+    // top: 10%;
+
+    // background-color: orange;
+    padding: 1rem;
+
+    .name{
+        text-align: center;
+        width:100%;
+        font-size: 3rem;
+    }
+
+    .crypto-preview{
+        display:flex;
+        flex-direction: column;
+        border-bottom-left-radius: 2rem;
+        border-bottom-right-radius: 2rem;
+        background-color: var(--white-color-01);
+
+        // padding: 2rem;
+        box-shadow: 1px 1px 5px var(--grey-2), 1px 1px 0 0 var(--grey-2) ;
+        background: linear-gradient( to right bottom, var(--white-color-1), var(--white-color-2));
+
+
+
+
+
+    }
+
+    .img-cont{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: .5rem;
+        position: relative;
+        // background-color: blueviolet;
+        .reload-cont{
+            position: absolute;
+            top: 0;
+            right: 0;
+            transform: rotate(10deg);
+            font-size: 2rem;
+            cursor:pointer;
+        
+            .reload{
+                pointer-events:none;
+            }
+        
+        }
+
+        .crypto-img{
+            width: 130px;
+            height: 130px;
+            overflow: hidden;
+            border-radius: 50%;
+    
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+    }
+
+
+    //todo VALUE
+
+    .value{
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        .price{
+            font-size: 2rem;
+            text-align: end;
+            padding-right: 0;
+            width: 100%;
+            
+
+
+        }
+    }
+
+    .type-cont{
+        display:flex;
+        align-items: flex-start;
+        justify-content: center;
+        // width: 100%;
+        // background-color: aqua;
+
+        .type{
+            font-size: 1rem;
+            width: 100%;
+            // padding-bottom: 1rem;
+
+        }
+
+    }
+    
+
+}
+
+.random-cont{
+    padding: 4rem 1rem;
+
+    .tokens{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 1rem;
+        width: 100%;
+        justify-items: center;
+
+
+        .token{
+            width: 120px;
+            box-shadow: 1px 1px 5px var(--grey-2), 1px 1px 0 0 var(--grey-2) ;
+            cursor: pointer;
+            border-radius: 1rem;
+            overflow: hidden;
+            background-color: var(--white-color-1);
+           
+            .img-cont{
+                // width: 100px;
+                // height: 100px;
+
+                .crypto-img{
+
+                    img{
+                        width: 100%;
+                        height: 100%;
+                        object-fit: contain;
+                    }
+
+                }
+.crypto-unit{
+    width: 100%;
+
+    p{
+        text-align: center;
+        font-size: 1.5rem;
+        text-transform: uppercase;
+    }
+    
+}
+
+            }
+        }
+    }
+}
+
+
+
 .btn-2{
     background-color: var(--btn-color-2);
-    width: 150px;
+    width: 180px;
     max-width: 100%;
-    padding: .8rem 1rem;
+    padding: .8rem 1.5rem;
     text-align: center;
     font-weight: 600;
 
@@ -910,6 +1658,25 @@ gap: 3rem;
 
 
     }
+
 }
+
    
+.spinner-cont{
+    grid-column: span 6;
+    align-items:center;
+    justify-content: center;
+    .spinner{
+        font-size: 5rem;
+        width: 100%;
+        text-align: center;
+        animation: cursor-blink .5ms steps(4) infinite;
+
+    }
+
 }
+
+
+}
+
+
