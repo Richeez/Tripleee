@@ -1,24 +1,44 @@
-import React from 'react'
+// import {useState} from 'react'
 
-const Header = () => {
+// import  './Maincontent';
+
+import { Link} from 'react-router-dom'
+
+
+const Header = (props) => {
+
+
+
   return (
     <header className='header'>
-      <div className="nav-bar">
+      <div ref={props.bar}  onClick={props.toggleMenuBar}  className="nav-bar">
         <div className="bugger">
-          <div></div>
+          <div className='center'></div>
         </div>
       </div>
             <div className="brand-name">
-                <h1>tripleee</h1>
+                <h1>
+            <Link  className='text-deco' to='./'>
+                  tripleee
+              </Link>
+                  </h1>
             </div>
-      <div className="nav-body">
+      <div ref={props.menu} className='nav-body'>
 
-        <nav className='nav' >
+        <nav className='nav'>
             <ul className='linkCont'>
-                <li>buy nft</li>
-                <li>community</li>
-                <li>learn trading</li>
-                <li>about us</li>
+                <li>
+                  <Link  className='text-deco' to='./'>buy nft </Link>
+                </li>
+                <li>
+                  <Link className='text-deco' to='./Community'>community</Link>
+                </li>
+                <li>
+                  <Link className='text-deco' to=''>learn trading</Link>
+                </li>
+                <li> 
+                  <Link className='text-deco' to=''>about us</Link> 
+                  </li>
             </ul>
 
         </nav>
@@ -35,5 +55,7 @@ const Header = () => {
     </header>
   )
 }
+
+
 
 export default Header

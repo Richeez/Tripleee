@@ -1,20 +1,36 @@
+// import { dom } from '@fortawesome/fontawesome-svg-core'
 import './App.css';
 
-
-
-// import { dom } from '@fortawesome/fontawesome-svg-core'
-
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Header from './components/Header';
+
 import Maincontent from './components/Maincontent';
+
 import Footer from './components/Footer';
+
+import {useRef} from 'react'
 
 // dom.watch()
 
+
 function App() {
+
+  const refMenu = useRef();
+
+  const refBar = useRef();
+
+  const menuBarHandler = () => {
+    refMenu.current.classList.toggle('reset')
+
+    refBar.current.classList.toggle('nav-bar-close')
+
+
+
+  }
+
+
   return (
     <div className="App">
-      <Header/>
+      <Header bar={refBar} menu={refMenu} toggleMenuBar={menuBarHandler} />
       <Maincontent/>
       <Footer/>
     </div>
