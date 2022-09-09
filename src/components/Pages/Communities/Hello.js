@@ -1,19 +1,19 @@
-import React from 'react'
+// import React from 'react'
 
-function Hello({data}) {
-console.log(data);
-    return (
-    <div>{data?.btc?.value}</div>
-  )
+// function Hello({data}) {
+// console.log(data);
+//     return (
+//     <div>{data?.btc?.value}</div>
+//   )
 
   
-      // console.log('as item',item)
-     /*  {data?.map((item) => (
+//       // console.log('as item',item)
+//      /*  {data?.map((item) => (
 
-      ))} */
-}
+//       ))} */
+// }
 
-export default Hello
+// export default Hello
 
 // const CryptoHack = () => {
 
