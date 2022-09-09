@@ -13,7 +13,6 @@ import {
       faRotateForward
     } from "@fortawesome/free-solid-svg-icons";
 
- //   <FontAwesomeIcon icon="fa-sharp fa-solid fa-rotate-right" />
 import {
        faFacebook, 
        faInstagram, 

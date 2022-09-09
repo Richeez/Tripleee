@@ -4,9 +4,7 @@
   --secondary-color-3:#9ad6cb;
   --secondary-color-4:#8be7f5;
   --btn-color:#6e086e;
-
   --btn-color-2:#0808d8;
-
   --scroll-bar-color:#990899;
   --transparent-color-01:#00000033;
   --transparent-color-02:#000000b3;
@@ -25,9 +23,6 @@
 
 body {
   margin: 0;
-  /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', */
-    /* 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', */
-    /* sans-serif; */
     font-family: 'Poppins', sans-serif;
     -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

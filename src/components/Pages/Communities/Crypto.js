@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import React, { createContext, useState } from 'react'
+import  {createContext, useState } from 'react'
 import CryptoHack from '../CryptoHack'
 
 export const UseContext = createContext()
@@ -13,7 +13,6 @@ const Crypto = () => {
     symbol:'btc'
   })
 
-  console.log(newResult, "newResult")
   function clickHandler (id, name, image, price, date, symbol){
     setNewResult({
       id: id,

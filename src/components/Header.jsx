@@ -28,16 +28,16 @@ const Header = (props) => {
         <nav className='nav'>
             <ul className='linkCont'>
                 <li>
-                  <Link  className='text-deco' to='./'>buy nft </Link>
+                  <Link onClick={props.toggleMenuBar} className='text-deco' to='./'>buy nft </Link>
                 </li>
                 <li>
-                  <Link className='text-deco' to='./Community'>community</Link>
+                  <Link onClick={props.toggleMenuBar}  className='text-deco' to='./Community'>community</Link>
                 </li>
                 <li>
-                  <Link className='text-deco' to=''>learn trading</Link>
+                  <Link onClick={props.toggleMenuBar}  className='text-deco' to=''>learn trading</Link>
                 </li>
                 <li> 
-                  <Link className='text-deco' to=''>about us</Link> 
+                  <Link onClick={props.toggleMenuBar}  className='text-deco' to=''>about us</Link> 
                   </li>
             </ul>
 
