@@ -99,7 +99,7 @@ const HomePage = () => {
         <div className="about-page">
         <div className="right-side">
         <h2>We Are The Best Trading Platform In USA</h2>
-        <p>What will you do if this is your only chance to making a fortune out of what you consider as mere talent? Which unknown to you can actually make you a fortune of a life time.</p>
+        <p>We'll guide you through portfolio options, risk levels, goal setting, and savings features.</p>
         </div>
         <div className="left-side">
         <div className="items">
@@ -108,14 +108,14 @@ const HomePage = () => {
         <FontAwesomeIcon className='icon' icon={['fa','money-bill']}/>
         </div>
         <h3>Easy to buy</h3>
-        <p>What will you do if this is your only chance to making a fortune out of what you consider as mere talent?</p>
+        <p>Get started with as little as $10 and use our top-rated mobile app to invest on the go.</p>
         </div>
         <div className="item">
         <div className="icon-wrapper">
         <FontAwesomeIcon className='icon' icon={['fa','wave-square']}/>
         </div>
         <h3>Easy to trade</h3>
-        <p>What will you do if this is your only chance to making a fortune out of what you consider as mere talent?</p>
+        <p>We put the robots to work for you, with automated tools and strategies that help unlock your money’s potential.</p>
         </div>
         <div className="item">
 
@@ -123,14 +123,14 @@ const HomePage = () => {
         <FontAwesomeIcon className='icon' icon={['fa','lock']}/>
         </div>
         <h3>Safe & Secure</h3>
-        <p>What will you do if this is your only chance to making a fortune out of what you consider as mere talent?</p>
+        <p>Connect all outside accounts and manage your financial life in one place.</p>
         </div>
         <div className="item">
         <div className="icon-wrapper">
         <FontAwesomeIcon className='icon' icon={['fa','wallet']}/>
         </div>
         <h3>More Profitable</h3>
-        <p>What will you do if this is your only chance to making a fortune out of what you consider as mere talent?</p>
+        <p>What will you do if this is your only chance to making a fortune out of what you consider as mere talent? Which unknown to you can actually make you a fortune of a life time.</p>
         </div>
         </div>
         </div>
