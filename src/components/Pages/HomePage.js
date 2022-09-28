@@ -93,8 +93,6 @@ const HomePage = () => {
 
         </div>
         </div>
-        {/* <CryptoHack/> */}
-
         </section>
 
         <section className="section sec2">
