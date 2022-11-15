@@ -1,12 +1,13 @@
-import {useState, useEffect, useContext} from 'react'
+import { useState, useEffect, useContext } from 'react'
 import RandomData from './Communities/RandomData'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { UseContext } from './Communities/Crypto'
+import axios from 'axios'
 
 
 
 const CryptoHack = () => {
-  const {clickHandler} = useContext(UseContext)
+  const { clickHandler } = useContext(UseContext)
   const [result, setResult] = useState()
 
   // const [newResult, setNewResult] = useState({
@@ -21,53 +22,46 @@ const CryptoHack = () => {
 
   /* console.log('as newresult', newResult) */
 
-  const cryptoData = async () => {
+  // const respData = Object.entries(data);
 
-    const response =  await fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false');
+  useEffect(() => {
+    const cancelToken = axios.CancelToken.source();
 
-    const data = await response.json();
+    axios.get('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false', { cancelToken: cancelToken.token })
 
-    // const respData = Object.entries(data);
+      .then((res) => {
+        setResult(res.data);
 
-    setResult(data);
-    // console.log('as data',data);
-  }
-useEffect(() => {
-  cryptoData();
-}, [])
+      })
+      .catch((err) => {
+        if (axios.isCancel(err)) {
+          console.log('cancelled')
 
-// function clickHandler(id, name, image, price, date, symbol){
-  
-//   setNewResult({
-//  id: id,
-// name: name,
-// image: image,
-// price: symbol,
-// symbol: date,
-// date: price
+        } else {
+          //todo:handle error
+        }
+      })
+    return () => cancelToken.cancel();
 
-// })
+  }, [result])
 
 
 
 
-// }
 
 
-                        
-
-// const defaultDisplay = [...item][0]
-//setResult()
+  // const defaultDisplay = [...item][0]
+  //setResult()
 
 
   return (
     <>
-{!result?.length ?  <div className='spinner-cont'><FontAwesomeIcon className='spinner' icon={['fa', 'spinner']} spin /></div> : result?.map(item => {
-          let time = new Date(item?.last_updated).toUTCString();
+      {!result?.length ? <div className='spinner-cont'><FontAwesomeIcon className='spinner' icon={['fa', 'spinner']} spin /></div> : result?.map(item => {
+        let time = new Date(item?.last_updated).toUTCString();
 
-            return(
+        return (
 
-            <RandomData
+          <RandomData
             key={item?.id}
             id={item?.id}
             image={item?.image}
@@ -77,20 +71,20 @@ useEffect(() => {
             date={time}
             symbol={item?.symbol}
             updateState={clickHandler}
-            />
-              
+          />
 
-            )
 
-                        
-                        
-})}
-    
+        )
+
+
+
+      })}
+
     </>
 
-  
-    
-  ) 
+
+
+  )
 }
 
 
