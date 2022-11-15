@@ -10,19 +10,6 @@ const CryptoHack = () => {
   const { clickHandler } = useContext(UseContext)
   const [result, setResult] = useState()
 
-  // const [newResult, setNewResult] = useState({
-  //   id:'',
-  //   name:'',
-  //   price:'',
-  //   image:'',
-  //   date:'',
-  //   symbol:''
-  // })
-
-
-  /* console.log('as newresult', newResult) */
-
-  // const respData = Object.entries(data);
 
   useEffect(() => {
     const cancelToken = axios.CancelToken.source();
